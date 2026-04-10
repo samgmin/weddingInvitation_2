@@ -25,7 +25,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: clamp(11.5px, 3.1vw, 13.5px);
+  font-size: calc(clamp(11.5px, 3.1vw, 13.5px) + 1px);
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;

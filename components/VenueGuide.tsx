@@ -8,7 +8,7 @@ export function VenueGuide({ guides }: { guides: Guide[] }) {
     <SectionShell className="px-11">
       <SectionHeading
         title="INFORMATION"
-        titleClassName="![font-family:var(--font-sans)] !text-[16px] !font-normal"
+        titleClassName="![font-family:var(--font-sans)] !text-[16.5px] !font-normal"
       />
       <div className="mt-4 space-y-3">
         {guides.map((g) => {
@@ -24,17 +24,20 @@ export function VenueGuide({ guides }: { guides: Guide[] }) {
             >
               {isFlowerGuide ? (
                 <>
-                  <p className="text-center text-[15px] font-bold text-[#3F3529]">{g.title}</p>
-                  <p className="mt-1 whitespace-pre-line text-center text-sm leading-6 text-[#6B5F50]">
+                  <p className="text-center text-[15.5px] font-bold text-[#3F3529]">{g.title}</p>
+                  <p className="mt-1 whitespace-pre-line text-center text-[14.5px] leading-6 text-[#6B5F50]">
                     {g.description}
                   </p>
                 </>
               ) : (
-                <p className="truncate whitespace-nowrap text-sm text-[#6B5F50]" title={`${g.title} ${g.description}`}>
+                <div
+                  className="grid grid-cols-[max-content_auto_1fr] items-start gap-x-1.5 text-[14.5px] leading-6 text-[#6B5F50]"
+                  title={`${g.title} ${g.description}`}
+                >
                   <span className="font-semibold text-[#3F3529]">{g.title}</span>
-                  <span className="mx-1 text-[#5A4E40]">·</span>
-                  <span>{g.description}</span>
-                </p>
+                  <span className="text-[#5A4E40]">·</span>
+                  <span className="whitespace-pre-line break-keep">{g.description}</span>
+                </div>
               )}
             </article>
           );

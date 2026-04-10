@@ -79,8 +79,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
@@ -105,15 +105,6 @@ export default function RootLayout({
                   alert('개발자 도구 사용할 수 없습니다');
                 }
               });
-
-              let lastTouchEnd = 0;
-              document.addEventListener('touchend', (event) => {
-                const now = Date.now();
-                if (now - lastTouchEnd <= 300) {
-                  event.preventDefault();
-                }
-                lastTouchEnd = now;
-              }, { passive: false });
 
               const isImageTarget = (target) => {
                 if (!(target instanceof Element)) return false;

@@ -19,6 +19,14 @@ import { BgmPlayer } from "@/components/BgmPlayer";
 export default function Page() {
   return (
     <main className="paper-texture mx-auto min-h-screen w-full max-w-[480px] space-y-0 bg-[#f6eee6] px-3 pb-6 pt-0 shadow-[0_14px_38px_rgba(66,51,35,0.16)]">
+      {weddingData.openingImage ? (
+        <Cover
+          src={weddingData.openingImage.src}
+          alt={weddingData.openingImage.alt ?? weddingData.shareTitle}
+          width={weddingData.openingImage.width}
+          height={weddingData.openingImage.height}
+        />
+      ) : null}
       <Cover
         src={weddingData.coverGif}
         alt={weddingData.shareTitle}

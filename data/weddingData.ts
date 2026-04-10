@@ -49,7 +49,21 @@ export type RsvpReminderData = {
   dismissForTodayLabel: string;
 };
 
+export type OpeningImage = {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+};
+
 export const weddingData = {
+  /** 첫 진입 시 기존 커버 위에 보여줄 이미지 (미사용 시 null) */
+  openingImage: {
+    src: "https://res.cloudinary.com/dp4u12ke2/image/upload/q_auto/f_auto/v1775578483/IMG_6672_afqt8j.jpg",
+    width: 768,
+    height: 1000,
+    alt: "첫 진입 인트로 이미지",
+  } as OpeningImage | null,
   /** 커버 이미지 URL (GIF/JPG 등) */
   coverGif: "https://res.cloudinary.com/dp4u12ke2/image/upload/v1775576845/cover_2_mxja9x.png",
   /** 실제 파일 픽셀 크기 — 비율·레이아웃용 (파일 바꾸면 같이 수정) */
@@ -245,16 +259,19 @@ export const weddingData = {
     {
       title: "화환 안내",
       description:
-        "화환은 정중히 사양합니다\n예식 장소 특성상 화환 관리가 어려워 부득이하게 반송될 예정입니다 \n마음만 감사히 받겠습니다",
+        "화환은 정중히 사양합니다\n예식 장소 특성상 화환 관리가 어려워 부득이하게\n반송될 예정입니다 \n마음만 감사히 받겠습니다",
     },
-    { title: "🚗 주차 안내", description: "예식 당일 새마을운동중앙회 내 주차장을 이용하실 수 있습니다." },
+    {
+      title: "🚗 주차 안내",
+      description: "예식 당일 새마을운동중앙회 내 주차장을\n이용하실 수 있습니다.",
+    },
     {
       title: "🍽️ 식사 안내",
       description: "식사는 본식 1부 종료 후 시작됩니다.",
     },
     {
       title: "🏧 ATM 안내",
-      description: "예식장 내 ATM이 마련되어 있지 않으니, 양해 부탁드립니다.",
+      description: "예식장 내 ATM이 마련되어 있지 않으니,\n양해 부탁드립니다.",
     },
   ] as VenueGuideItem[],
   notice:
